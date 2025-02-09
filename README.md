@@ -10,3 +10,17 @@ Integer programming is an important tool for solving the domination problem. Wit
 2.Licenses Required
 
 For Gurobi, a WLS license is needed. Before compiling the program, please make sure you input your WLSACCESSID, WLSSECRECT and LICENSEID in the params. For COPT, a free trial license for academic or business use is needed. See the application link here: https://www.shanshu.ai/copt. CP SAT Solver is free, but needed to install the library 'ortools' first.
+
+3. Variants of Domination Problem Covered
+This project covers three variants of domination problem in total.
+
+A) Minimum Domination Set(MDS) Problem
+
+For a graph $G$, a vertex subset $D$ is called a dominating set of $G$ if for any vertex $v$ in $V(G)$, either it has a neighbour in $D$ or it is in $D$ itself. The minimum dominating set problem is to find a dominating set with smallest cardinality. The decision version of the MDS is a classical NP-complete problem. [1] An integer programming formation for MDS problem is as follows:
+
+min \sum_{v \in V(G)} x_v
+
+s.t. \sum_{u \in N(v)} x_u + x_v >=1, for any v \in V(G)
+
+References
+1. Garey, M.R., Johnson, D.S.: Computers and Intractability: A Guide to the Theory of NPCompleteness. W. H. Freeman & Co., New York (1979)
