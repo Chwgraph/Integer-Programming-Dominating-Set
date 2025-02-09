@@ -12,6 +12,7 @@ Integer programming is an important tool for solving the domination problem. Wit
 For Gurobi, a WLS license is needed. Before compiling the program, please make sure you input your WLSACCESSID, WLSSECRECT and LICENSEID in the params. For COPT, a free trial license for academic or business use is needed. See the application link here: https://www.shanshu.ai/copt. CP SAT Solver is free, but needed to install the library 'ortools' first.
 
 3. Variants of Domination Problem Covered
+4. 
 This project covers three variants of domination problem in total.
 
 A) Minimum Domination Set(MDS) Problem
