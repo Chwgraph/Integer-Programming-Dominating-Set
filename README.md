@@ -15,7 +15,7 @@ For Gurobi, a WLS license is needed. Before compiling the program, please make s
    
 This project covers three variants of domination problem in total.
 
-A) Minimum Domination Set(MDS) Problem
+A) Minimum Dominating Set(MDS) Problem
 
 For a graph $G$, a vertex subset $D$ is called a dominating set of $G$ if for any vertex $v$ in $V(G)$, either it has a neighbour in $D$ or it is in $D$ itself. The minimum dominating set problem is to find a dominating set with smallest cardinality. The decision version of the MDS is a classical NP-complete problem. [1] An integer programming formation for MDS problem is as follows: 
 
@@ -23,5 +23,15 @@ min $\sum_{v \in V(G)} x_v$
 
 s.t. $\sum_{u \in N(v)} x_u + x_v >=1, \forall v \in V(G)$
 
+B) Strongly/Total Dominating Set (SMDS) Problem
+
+A total dominating set (or strongly-dominating set) is a set of vertices such that all vertices in the graph, including the vertices in the dominating set themselves, have a neighbor in the dominating set.[2] An integer programming formation for SMDS problem is as follows:
+
+min $\sum_{v \in V(G)} x_v$
+
+s.t. $\sum_{u \in N(v)} x_u >=1, \forall v \in V(G)$
+
+
 References
 1. Garey, M.R., Johnson, D.S.: Computers and Intractability: A Guide to the Theory of NPCompleteness. W. H. Freeman & Co., New York (1979)
+2. West, Douglas B. (2001), Introduction to Graph Theory (2 ed.), Pearson Education.
