@@ -23,13 +23,16 @@ min $\sum_{v \in V(G)} x_v$
 
 s.t. $\sum_{u \in N(v)} x_u + x_v >=1, \forall v \in V(G)$
 
-B) Strongly/Total Dominating Set (SMDS) Problem
+B) Minimum Strongly/Total Dominating Set (MSDS) Problem
 
 A total dominating set (or strongly-dominating set) is a set of vertices such that all vertices in the graph, including the vertices in the dominating set themselves, have a neighbor in the dominating set.[2] An integer programming formation for SMDS problem is as follows:
 
 min $\sum_{v \in V(G)} x_v$
 
 s.t. $\sum_{u \in N(v)} x_u >=1, \forall v \in V(G)$
+
+C) Minimum Connected Dominating Set (MCDS) Problem
+MCDS problem requires the minimum dominating set obtained can induce a connected subgraph. There are various kinds of connectivity constraints.
 
 
 References
