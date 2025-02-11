@@ -21,7 +21,7 @@ For a graph $G$, a vertex subset $D$ is called a dominating set of $G$ if for an
 
 min $\sum_{v \in V(G)} x_v$
 
-s.t. $\sum_{u \in N(v)} x_u + x_v >=1, for any v \in V(G)$
+s.t. $\sum_{u \in N(v)} x_u + x_v >=1, \forall v \in V(G)$
 
 References
 1. Garey, M.R., Johnson, D.S.: Computers and Intractability: A Guide to the Theory of NPCompleteness. W. H. Freeman & Co., New York (1979)
