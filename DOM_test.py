@@ -44,9 +44,9 @@ Z=generate_Z(rows)
 print(Z)
 
 params = {
-"WLSACCESSID": '32367e63-10a1-47ff-8a1c-989d81103850',
-"WLSSECRET": 'd4bba7a4-6a7f-4c05-bb75-60201f5b36c3',
-"LICENSEID": 2617825,
+"WLSACCESSID": 'xxxxxxxxxx',
+"WLSSECRET": 'xxxxxxxxx',
+"LICENSEID": xxxxxxxx,
 }
 
 d1=DOMIP.dom(matrix, rows,'CP',params,10000)
