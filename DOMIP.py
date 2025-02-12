@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jan 21 14:10:05 2025
-
 @author: howiech
 """
 
