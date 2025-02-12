@@ -95,7 +95,7 @@ $\sum_{j} f_{ji} -\sum_{i} f_{ij}=x_i-r_i \sum_{j} x_j, \forall i \in V$
 
 $r_i \in \{0,1\}, \forall v \in V$
 
-## C) Minimum Power Dominating Set (MPDS) Problem
+## D) Minimum Power Dominating Set (MPDS) Problem
 
 For a power graph $G = (V,E)$, there is a given subset $V_Z \subset V$ of zero-injection vertices. As explained in [8], a power dominating set $D$ is obtained by leveraging two physical laws: (1) if $v \in D$, then v and its neighbors (denoted by $N(v)$) are all covered (Ohm’s law); (2) if $v ∈ V_Z$, and all vertices within the set $\{v\} \cup N(v)$ except one are covered, then the uncovered vertex in $\{v\} \cup N(v)$ is also covered (Kirchhoff’s current law). The power dominating set (PDS) problem is to find a subset $D$ with smallest cardinality that covers all vertices in $V$. In [9], a formulation for MPDS problem is proposed as follows:
 
@@ -109,7 +109,7 @@ $p_{ij}=0, \forall i,j \quad \text{if} a_{ij}=0 \quad \text{or} i \not in V_Z$
 
 $x_i, p_{ij} \in \{0,1\}, \forall i, j \in V$
 
-## D) Double Roman Domination Problem (DRDP)
+## E) Double Roman Domination Problem (DRDP)
 
 A double Roman dominating function (DRDF) is a function $f : V \longrightarrow \{0, 1, 2, 3\}$ having the property that if $f(v) = 0$, then vertex $v$ must have at least two neighbors assigned $2$ under $f$ or at least one neighbor $u$ with $f(u) = 3$, and if $f(v) = 1$, then vertex $v$ must have at least one neighbor $u$ with $f(u) \geq 2$. The weight of a DRDF $f$ is the sum $w(f) = \sum_{v} f(v)$, and the double Roman domination number of a graph $G$, denoted by $\gamma_{dR}(G)$, is the minimum weight among all possible DRDFs.
 
@@ -143,6 +143,35 @@ $q_v+ \sum_{u \in N(v)} q_u \geq p_v, \forall v \in V$
 $r_v \leq q_v \leq p_v, \forall v \in V$
 
 $r_v, p_v, q_v \in \{0,1\}, \forall v \in V$
+
+
+### 3) DRDP-1'
+
+Improved version of DRDP-1.
+
+$\min \sum_{v} 2y_v + \sum 3 z_v$
+
+$s.t. y_v+z_v+\frac{1}{2}\sum_{u \in N(v)} y_u + \sum_{u \in N(v)} z_u \geq 1, \forall v \in V$
+
+$\sum_{u \in N(v)} (y_u+z_u) \geq x_v, \forall v \in V$
+
+$y_v+z_v \leq 1, \forall v \in V$
+
+$y_v, z_v \in \{0,1\}, \forall v \in V$
+
+
+### 4) DRDP-2'
+
+Improved version of DRDP-2.
+
+$\min \sum_{v} 2q_v + \sum r_v$
+
+$s.t. q_v+\frac{1}{2}\sum_{u \in N(v)} q_u + \frac{1}{2} \sum_{u \in N(v)} r_u \geq 1, \forall v \in V$
+
+$r_v \leq q_v, \forall v \in V$
+
+$r_v, q_v \in \{0,1\}, \forall v \in V$
+
 
 # References
 1. Garey, M.R., Johnson, D.S.: Computers and Intractability: A Guide to the Theory of NPCompleteness. W. H. Freeman & Co., New York (1979)
