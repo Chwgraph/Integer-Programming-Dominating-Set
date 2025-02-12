@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 
 
 class dom:
-    def __init__(self, adj_matrix, nodes, solver, params, M):
+    def __init__(self, adj_matrix, nodes, solver, params={}, M=10000):
         self.adj=adj_matrix
         self.nodes=nodes
         self.solver=solver
@@ -154,7 +154,7 @@ class dom:
         print(VAR)
         return VAR
     
-    #Solver MDS using the solver selectedby the user.
+    #Solver MDS using the solver selected by the user.
     def MDS(self, k, ver):
         solver=self.solver
         if solver=='OR':
