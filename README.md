@@ -23,6 +23,8 @@ min $\sum_{v \in V(G)} x_v$
 
 s.t. $\sum_{u \in N(v)} x_u + x_v >=1, \forall v \in V(G)$
 
+MDS problem can be easily generalized by k-MDS problem in which we require each vertex to have at least $k$ neighbours in the dominating set. This is called k-MDS Prolem.
+
 ## B) Minimum Strongly/Total Dominating Set (MSDS) Problem
 
 A total dominating set (or strongly-dominating set) is a set of vertices such that all vertices in the graph, including the vertices in the dominating set themselves, have a neighbor in the dominating set.[2] An integer programming formation for SMDS problem is as follows:
@@ -172,6 +174,37 @@ $r_v \leq q_v, \forall v \in V$
 
 $r_v, q_v \in \{0,1\}, \forall v \in V$
 
+
+# 4. Guidance to Use Program
+
+## A) Basic Parameters
+
+|Name|Description|
+|---|---|
+|adj_matrix|The adjacency matrix of your input graph|
+|nodes|Number of vertices in the graph|
+|solver|The solver you would like to use: 'OR', 'GRB', or 'CP'|
+|params|The params for license of Gurobi if you choose 'GRB'|
+|M|Value of big M, defaulted value is 10000|
+
+## B) Functions
+
+|Name|Description|Parameters|
+|---|---|---|
+|MDS|Function for solving strong/basic k-MDS problem|k: value for k in k-MDS problem, ver: 's' for strong, 'w' for basic|
+|CMDS|Function for solving CMDS Problem|cons: The connected constraints you would like to use, 'MTZ' for Miller-Tucker-Zemlin, 'MAR' for Martin, and 'SCF' for Single-Commodity Flow|
+|PMDS|Function for solving PMDS Problem|Z:zero-injection vertex set indicated using a 0-1 Numpy Array|
+|DRDP|Function for solving DRDP|n: No. of the constraints you would like to use, 1 for DRDP-1, 2 for DRDP-2, 3 for DRDP-1' and 4 for DRDP-2'|
+|draw|Function to visualize the result by drawing the graph with vertices in the dominating set colored red|var: vector output by one of the functions: MDS, CMDS and PMDS|
+|draw_DRDP|Function to visualize the result of DRDP by drawing the graph with vertices f(v)=0 red, f(v)=1 blue, f(v)=2 yellow and f(v)=3 green|var: vector output by DRDP|
+
+## C) Notes
+
+1. For PDMS and Martin Constraints for CDMS, only Gurobi and COPT are available;
+2. For SCF Constraints for CDMS, only Gurobi and CP SAT Solver are available;
+3. The time limit for each problem is set 5 minutes.
+4. For Gurobi params, please input your params as suggested on the official website of Gurobi;
+5. Comments and suggestions are welcomed. Since this is the original version, there may be some issues.
 
 # References
 1. Garey, M.R., Johnson, D.S.: Computers and Intractability: A Guide to the Theory of NPCompleteness. W. H. Freeman & Co., New York (1979)
