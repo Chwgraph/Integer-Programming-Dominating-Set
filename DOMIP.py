@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """
+Created on Tue Jan 21 14:10:05 2025
+
 @author: howiech
 """
 
@@ -694,8 +696,12 @@ class dom:
                 model.addConstr(sum(D[i][k])+B[i][k]>=1-M*(2-var_x[i]-var_x[j]))
                 model.addConstr(sum(D[i][k])+B[i][k]<=1+M*(2-var_x[i]-var_x[j]))
         model.setObjective(sum(var_x), cp.COPT.MINIMIZE)
-        model.solve()
-        VAR = [var_x[i].X for i in range(rows)]
+        stat=model.solve()
+        if stat==cp.COPT.OPTIMAL:
+            VAR = [var_x[i].X for i in range(rows)]
+        else:
+            print('No feasible solution.')
+            return []
         return VAR
 
 
