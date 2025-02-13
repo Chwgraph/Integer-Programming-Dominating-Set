@@ -107,7 +107,7 @@ $s.t. \sum_{j} a_{ij}x_j + \sum_{j} a_{ij}Z_jp_{ij} \geq 1, \forall i \in V$
 
 $\sum_{j} a_{ij}p_{ij} =Z_i, \forall i \in V$
 
-$p_{ij}=0, \forall i,j \quad \text{if} a_{ij}=0 \quad \text{or} i \not in V_Z$
+$p_{ij}=0, \forall i,j \quad \text{if} \quad a_{ij}=0 \quad \text{or} \quad i \notin V_Z$
 
 $x_i, p_{ij} \in \{0,1\}, \forall i, j \in V$
 
